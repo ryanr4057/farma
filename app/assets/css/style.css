@@ -8,6 +8,8 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@import "font-awesome";
+@import "bootstrap";
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -488,13 +490,15 @@ h6 {
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
-  color: #2c4964;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 #hero h2 {
-  color: #2c4964;
+  color: #ffffff;
   margin: 10px 0 0 0;
   font-size: 24px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 #hero .btn-get-started {
