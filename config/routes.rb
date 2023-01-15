@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :medicamentos
+  resources :carrinho
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

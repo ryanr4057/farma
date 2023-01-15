@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_11_214937) do
-  create_table "medicamentos", force: :cascade do |t|
-    t.string "nome"
-    t.string "bula"
-    t.float "preco"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_212013) do
   create_table "vendas", force: :cascade do |t|
     t.float "numero"
     t.float "valor"
