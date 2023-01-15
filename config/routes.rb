@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :carrinho
+  resources :vndas
+  resources :vendedors
+  resources :medicamentos
+  resources :clientes
+  devise_for :users
+  resources :atendente
 
 
 

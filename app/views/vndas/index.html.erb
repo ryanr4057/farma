@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Vndas</h1>
+
+<div id="vndas">
+  <% @vndas.each do |vnda| %>
+    <%= render vnda %>
+    <p>
+      <%= link_to "Show this vnda", vnda %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New vnda", new_vnda_path %>
