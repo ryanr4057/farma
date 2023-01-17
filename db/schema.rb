@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_15_221727) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_202000) do
+  create_table "atendentes", force: :cascade do |t|
+    t.string "nome"
+    t.integer "usuario"
+    t.string "cpf"
+    t.integer "idade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clientes", force: :cascade do |t|
+    t.string "nome"
+    t.string "cpf"
+    t.integer "idade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "medicamentos", force: :cascade do |t|
+    t.string "nome"
+    t.float "preco"
+    t.string "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,21 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_15_221727) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "vendas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vendedors", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vndas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

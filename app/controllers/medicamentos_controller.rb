@@ -65,6 +65,6 @@ class MedicamentosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def medicamento_params
-      params.fetch(:medicamento, {})
+      params.require(:medicamento).permit(:nome, :preco, :descricao)
     end
 end

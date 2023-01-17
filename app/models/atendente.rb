@@ -1,0 +1,2 @@
+class Atendente < ApplicationRecord
+end

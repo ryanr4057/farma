@@ -17,7 +17,7 @@ class MedicamentosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create medicamento" do
     assert_difference("Medicamento.count") do
-      post medicamentos_url, params: { medicamento: {  } }
+      post medicamentos_url, params: { medicamento: { descricao: @medicamento.descricao, nome: @medicamento.nome, preco: @medicamento.preco } }
     end
 
     assert_redirected_to medicamento_url(Medicamento.last)
@@ -34,7 +34,7 @@ class MedicamentosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update medicamento" do
-    patch medicamento_url(@medicamento), params: { medicamento: {  } }
+    patch medicamento_url(@medicamento), params: { medicamento: { descricao: @medicamento.descricao, nome: @medicamento.nome, preco: @medicamento.preco } }
     assert_redirected_to medicamento_url(@medicamento)
   end
 

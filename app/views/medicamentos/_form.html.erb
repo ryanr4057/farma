@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'sty_cad.css' %>
+
 <%= form_with(model: medicamento) do |form| %>
   <% if medicamento.errors.any? %>
     <div style="color: red">
@@ -12,6 +14,21 @@
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :preço, style: "display: block" %>
+    <%= form.text_field :preco %>
+  </div>
+
+  <div>
+    <%= form.label :descrição, style: "display: block" %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div>
+  <button class="appointment-btn-criar-a"> Cadastrar Medicamento <class="d-none d-md-inline">
   </div>
 <% end %>

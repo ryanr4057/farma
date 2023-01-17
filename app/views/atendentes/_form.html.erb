@@ -1,12 +1,12 @@
 <%= stylesheet_link_tag 'sty_cad.css' %>
 
-<%= form_with(model: cliente) do |form| %>
-  <% if cliente.errors.any? %>
+<%= form_with(model: atendente) do |form| %>
+  <% if atendente.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+      <h2><%= pluralize(atendente.errors.count, "error") %> prohibited this atendente from being saved:</h2>
 
       <ul>
-        <% cliente.errors.each do |error| %>
+        <% atendente.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -16,6 +16,11 @@
   <div>
     <%= form.label :nome, style: "display: block" %>
     <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :usuário, style: "display: block" %>
+    <%= form.number_field :usuario %>
   </div>
 
   <div>
@@ -29,6 +34,6 @@
   </div>
 
   <div>
-  <button class="appointment-btn-criar-a"> Cadastrar Cliente <class="d-none d-md-inline">
+   <button class="appointment-btn-criar-a"> Cadastrar Atendente <class="d-none d-md-inline">
   </div>
 <% end %>

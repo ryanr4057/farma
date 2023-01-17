@@ -2,10 +2,12 @@
 
 one:
   nome: MyString
+  usuario: 1
   cpf: MyString
   idade: 1
 
 two:
   nome: MyString
+  usuario: 1
   cpf: MyString
   idade: 1

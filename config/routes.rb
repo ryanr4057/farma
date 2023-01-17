@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :vndas
-  resources :vendedors
+  resources :atendentes
   resources :medicamentos
   resources :clientes
   devise_for :users

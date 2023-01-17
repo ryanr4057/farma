@@ -14,6 +14,9 @@ class MedicamentosTest < ApplicationSystemTestCase
     visit medicamentos_url
     click_on "New medicamento"
 
+    fill_in "Descricao", with: @medicamento.descricao
+    fill_in "Nome", with: @medicamento.nome
+    fill_in "Preco", with: @medicamento.preco
     click_on "Create Medicamento"
 
     assert_text "Medicamento was successfully created"
@@ -24,6 +27,9 @@ class MedicamentosTest < ApplicationSystemTestCase
     visit medicamento_url(@medicamento)
     click_on "Edit this medicamento", match: :first
 
+    fill_in "Descricao", with: @medicamento.descricao
+    fill_in "Nome", with: @medicamento.nome
+    fill_in "Preco", with: @medicamento.preco
     click_on "Update Medicamento"
 
     assert_text "Medicamento was successfully updated"
