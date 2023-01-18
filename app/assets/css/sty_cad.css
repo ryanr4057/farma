@@ -37,6 +37,16 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+
+.form-control{
+  margin-top: -8px;
+  margin-bottom: -20px;
+  font-size: 24px;
+  color: #000000;
+  box-shadow: #000000;
+  border: none;
+}
+
 #preloader {
   position: fixed;
   top: 300px;
@@ -407,7 +417,7 @@ h6 {
 
 #hero h2 {
   color: #daa520;
-  margin-top: -180px;
+  margin-top: -190px;
   margin-left: 2px;
   font-size: 24px;
   text-shadow: 2px 2px 4px #000000;

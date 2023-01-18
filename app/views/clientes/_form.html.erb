@@ -15,17 +15,17 @@
 
   <div>
     <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class: "form-control" %><br>
   </div>
 
   <div>
     <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+    <%= form.text_field :cpf, class: "form-control", maxlength:15, onkeypress:"$(this).mask('000.000.000-AA')" %><br>
   </div>
 
   <div>
     <%= form.label :idade, style: "display: block" %>
-    <%= form.number_field :idade %>
+    <%= form.text_field :idade, class: "form-control", maxlength:2, onkeypress:"$(this).mask('00')" %><br>
   </div>
 
   <div>
