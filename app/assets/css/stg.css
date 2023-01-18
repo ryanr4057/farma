@@ -202,9 +202,9 @@ h6 {
   color: #fff;
 }
 
-.appointment-btn-criar-a {
-    margin-left: -14px;
-    margin-top: 105px;
+.appointment-btn-criar-s {
+    margin-left: 0px;
+    margin-top: 15px;
     background: #daa520;
     color: #fff;
     border-radius: 50px;
@@ -213,11 +213,12 @@ h6 {
     transition: 0.3s;
     font-size: 18px;
     display: inline-block;
+    visibility: hidden;
 
   }
 
 
-  .appointment-btn-criar-a:hover {
+  .appointment-btn-criar-s:hover {
     background: #ffd570;
     color: #fff;
   }
@@ -401,7 +402,7 @@ h6 {
 }
 
 #hero h2 {
-  color: #ffffff;
+  color: #daa520;
   margin-top: -180px;
   margin-left: 2px;
   font-size: 24px;
@@ -411,11 +412,11 @@ h6 {
 }
 
 #hero h3 {
-    margin-top: 27px;
+    margin-top: -30px;
     margin-left: 2px;
     font-size: 24px;
     text-shadow: 2px 2px 4px #000000;
-    color: #fff;
+
 
     position: fixed;
   }

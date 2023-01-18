@@ -5,6 +5,8 @@
 * License: https://bootstrapmade.com/license/
 */
 (function() {
+
+  ('#cpf').inputmask({ mask: "123.456.789-10" });
   "use strict";
 
   /**
@@ -176,5 +178,8 @@
    * Initiate Pure Counter
    */
   new PureCounter();
+
+
+
 
 })()

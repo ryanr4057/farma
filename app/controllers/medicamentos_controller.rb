@@ -4,6 +4,8 @@ class MedicamentosController < ApplicationController
   # GET /medicamentos or /medicamentos.json
   def index
     @medicamentos = Medicamento.all
+    .order(preco: :asc)
+    .page(params[:page])
   end
 
   # GET /medicamentos/1 or /medicamentos/1.json

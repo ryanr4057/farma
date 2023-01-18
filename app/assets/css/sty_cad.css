@@ -11,6 +11,7 @@
 @import "font-awesome";
 @import "bootstrap";
 
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -387,6 +388,10 @@ h6 {
 
 }
 
+.table{
+  color: #ddd;
+}
+
 #hero h1 {
   margin: 0;
   margin-top: -500px;
@@ -410,15 +415,62 @@ h6 {
   position: fixed;
 }
 
+#hero h4 {
+  color: #ffffff;
+  margin-top: -205px;
+  margin-left: 650px;
+  font-size: 16px;
+  text-shadow:none;
+
+  position:fixed;
+}
+
+#hero h5 {
+  color: #ffffff;
+  margin-top: -180px;
+  margin-left: 122px;
+  font-size: 24px;
+  text-shadow:none;
+  position: fixed;
+}
+
+
+
+#hero h6 {
+  color: #daa520;
+  margin-top: 387px;
+  margin-left: 122px;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px #000000;
+
+  position: fixed;
+}
+
+
 #hero h3 {
     margin-top: -30px;
     margin-left: 2px;
     font-size: 24px;
     text-shadow: 2px 2px 4px #000000;
-
-
     position: fixed;
   }
+
+
+  #hero th {
+    text-align: center;
+  }
+
+  #hero tr {
+    border-bottom: 1px solid #ffd570;
+    }
+
+  #hero tr:hover {
+  background-color: rgba(255, 255, 255, 0.055);
+  }
+
+
+
+
 
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;

@@ -25,7 +25,7 @@
 
   <div>
     <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+    <input id="cpf" type="text" onkeypress="$(this).mask('000.000.000-00')" autocomplete="off">
   </div>
 
   <div>
@@ -37,3 +37,8 @@
    <button class="appointment-btn-criar-a"> Cadastrar Atendente <class="d-none d-md-inline">
   </div>
 <% end %>
+
+<script type="text/javascript" src="C:\Users\ryanr\farma\app\javascript\application.js"></script>
+<script type="text/javascript" src="C:\Users\ryanr\farma\app\assets\js\jquery.mask.js"></script>
+<script type="text/javascript" src="C:\Users\ryanr\farma\app\assets\js\jquery.mask.min.js"></script>
+

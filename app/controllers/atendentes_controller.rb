@@ -4,6 +4,8 @@ class AtendentesController < ApplicationController
   # GET /atendentes or /atendentes.json
   def index
     @atendentes = Atendente.all
+    .order(usuario: :asc)
+    .page(params[:page])
   end
 
   # GET /atendentes/1 or /atendentes/1.json

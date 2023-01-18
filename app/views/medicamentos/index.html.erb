@@ -86,15 +86,35 @@
   <h1>Medicamentos</h1>
 
   <div id="medicamentos">
-    <% @medicamentos.each do |medicamento| %>
-      <%= render medicamento %>
-      <p>
-        <%= link_to "Show this medicamento", medicamento %>
-      </p>
-    <% end %>
-  </div>
 
-  <%= link_to "Novo medicamento", new_medicamento_path %>
+<h5><table>
+  <thead>
+    <tr>
+      <th style="width: 200px">Nome</th>
+      <th style="width: 420px">Descrição</th>
+      <th style="width: 100px">Preço</th>
+      <th>Visualizar</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @medicamentos.each do |medicamento| %>
+      <tr>
+      <td style="height: 50px"><%=medicamento.nome %></td>
+      <td><%=medicamento.descricao %></td>
+      <td style= "text-align: center "><%=medicamento.preco %></td>
+      <td style= "text-align: center "><%= link_to "Exibir", medicamento %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <h4><%= paginate @medicamentos %></h4>
+</div>
+
+<h5>
+
+<h6><%= link_to "Novo medicamento", new_medicamento_path %><h6>
+
+
 
 
   </section><!-- End Hero -->
@@ -137,7 +157,6 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
 
 
 

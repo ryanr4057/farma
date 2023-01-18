@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>Farma</title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,7 +16,7 @@
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
      <%if current_user %>
-      <%= button_to "sair", destroy_user_session_path, method: :delete, data: { turbo: false} %>
+      <%= button_to "sair"%>
      <% end %>
 
      <%= yield %>

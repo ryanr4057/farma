@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -86,15 +88,33 @@
 <h1>Clientes</h1>
 
 <div id="clientes">
-  <% @clientes.each do |cliente| %>
-    <%= render cliente %>
-    <p>
-      <%= link_to "Show this cliente", cliente %>
-    </p>
-  <% end %>
+
+<h5><table>
+  <thead>
+    <tr>
+      <th style="width: 430px">Nome</th>
+      <th style="width: 200px">CPF</th>
+      <th style="width: 100px">Idade</th>
+      <th>Visualizar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+      <td style="height: 50px"><%=cliente.nome %></td>
+      <td style= "text-align: center "><%=cliente.cpf %></td>
+      <td style= "text-align: center "><%=cliente.idade %></td>
+      <td style= "text-align: center "><%= link_to "Exibir", cliente %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <h4><%= paginate @clientes %></h4>
 </div>
 
-<%= link_to "Novo cliente", new_cliente_path %>
+<h5>
+
+<h6><%= link_to "Novo cliente", new_cliente_path %><h6>
 
 
   </section><!-- End Hero -->

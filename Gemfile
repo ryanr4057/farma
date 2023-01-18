@@ -74,3 +74,7 @@ end
 gem 'bootstrap', '~> 5.2.3'
 gem "font-awesome-rails"
 gem "devise"
+gem "kaminari"
+gem 'maskedinput-rails', '~> 1.4', '>= 1.4.1.0'
+gem 'jquery_mask_rails', '~> 0.1.0'
+gem 'jquery-rails', '~> 4.5', '>= 4.5.1'
