@@ -27,7 +27,7 @@ class AtendentesController < ApplicationController
 
     respond_to do |format|
       if @atendente.save
-        format.html { redirect_to atendente_url(@atendente), notice: "Atendente was successfully created." }
+        format.html { redirect_to atendente_url(@atendente), notice: "Atendente Cadastrado." }
         format.json { render :show, status: :created, location: @atendente }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class AtendentesController < ApplicationController
   def update
     respond_to do |format|
       if @atendente.update(atendente_params)
-        format.html { redirect_to atendente_url(@atendente), notice: "Atendente was successfully updated." }
+        format.html { redirect_to atendente_url(@atendente), notice: "Atendente Editado." }
         format.json { render :show, status: :ok, location: @atendente }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class AtendentesController < ApplicationController
     @atendente.destroy
 
     respond_to do |format|
-      format.html { redirect_to atendentes_url, notice: "Atendente was successfully destroyed." }
+      format.html { redirect_to atendentes_url, notice: "Atendente Apagado." }
       format.json { head :no_content }
     end
   end

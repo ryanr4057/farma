@@ -80,6 +80,7 @@
 
   <h1>atendente</h1>
 
+
   <div class="container">
 
     <h2>
@@ -88,17 +89,20 @@
 <%= render @atendente %>
 
     <div>
-
-
       <%=button_to "Apagar Atendente", @atendente, method: :delete, class: "appointment-btn-criar-a" %>
     </div>
 
     <h2>
+
     <h3><%= link_to "Editar", edit_atendente_path(@atendente) %> |
       <%= link_to "Voltar", atendentes_path %>
       <h3>
 
+      <h6><p style="color: white"><%= notice %></p><h/6>
+
   </div>
+
+
 
 
 

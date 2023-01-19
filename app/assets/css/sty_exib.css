@@ -420,6 +420,17 @@ h6 {
     position: fixed;
   }
 
+  #hero p {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  #hero h6 {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;

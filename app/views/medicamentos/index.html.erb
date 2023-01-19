@@ -81,7 +81,6 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
-  <p style="color: green"><%= notice %></p>
 
   <h1>Medicamentos</h1>
 
@@ -108,9 +107,12 @@
   </tbody>
   </table>
   <h4><%= paginate @medicamentos %></h4>
+
 </div>
 
 <h5>
+
+<p style="color: white"><%= notice %></p>
 
 <h6><%= link_to "Novo medicamento", new_medicamento_path %><h6>
 

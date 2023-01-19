@@ -47,6 +47,10 @@ h6 {
   border: none;
 }
 
+.button-sair{
+  visibility: hidden;
+}
+
 #preloader {
   position: fixed;
   top: 300px;
@@ -431,9 +435,10 @@ h6 {
   margin-left: 650px;
   font-size: 16px;
   text-shadow:none;
-
   position:fixed;
+
 }
+
 
 #hero h5 {
   color: #ffffff;
@@ -463,6 +468,14 @@ h6 {
     font-size: 24px;
     text-shadow: 2px 2px 4px #000000;
     position: fixed;
+  }
+
+  #hero p {
+    margin-top: 520px;
+    margin-left: 0px;
+    font-size: 16px;
+
+
   }
 
 
