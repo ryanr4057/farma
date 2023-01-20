@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  qtd: 1
-  total: 1.5
   medicamento: one
+  qtd: 1
+  unit: 1.5
+  s_total: 1.5
 
 two:
-  qtd: 1
-  total: 1.5
   medicamento: two
+  qtd: 1
+  unit: 1.5
+  s_total: 1.5

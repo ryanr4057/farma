@@ -51,7 +51,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="link_to" href="/">Início</a></li>
-          <li><a class="link_to" href="/vendas">Venda</a></li>
+          <li><a class="link_to" href="/vndas">Venda</a></li>
 
           <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,13 +64,9 @@
   </ul>
 </div>
 
-
-
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-
       <%if current_user %>
       <%= button_to "Sair", destroy_user_session_path, method: :delete, data: { turbo: false}, class: "appointment-btn" %>
      <% end %>
@@ -79,46 +75,22 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
+
   <section id="hero" class="d-flex align-items-center">
 
+  <h1>Venda</h1>
 
+  <div class="container">
 
-  <h1>Atendentes</h1>
+    <h2><%= render "form", venda: @venda %>
 
-<div id="atendentes">
+      <br>
 
-<h5><table>
-  <thead>
-    <tr>
-      <th style="width: 50px">Id</th>
-      <th style="width: 380px">Nome</th>
-      <th style="width: 200px">CPF</th>
-      <th style="width: 100px">Idade</th>
-      <th>Visualizar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @atendentes.each do |atendente| %>
-      <tr>
-      <td style= "text-align: center "><%=atendente.usuario %></td>
-      <td style="height: 50px"><%=atendente.nome %></td>
-      <td style= "text-align: center "><%=atendente.cpf %></td>
-      <td style= "text-align: center "><%=atendente.idade %></td>
-      <td style= "text-align: center "><%= link_to "Exibir", atendente %></td>
-    </tr>
-    <% end %>
-  </tbody>
-  </table>
-  <h4><%= paginate @atendentes %></h4>
-</div>
-
-<h5>
-
-<p style="color: white"><%= notice %></p>
-
-<h6><%= link_to "Novo Atendente", new_atendente_path %><h6>
-
-
+      <div>
+      <%= link_to "Voltar", vendas_path %>
+      </div>
+    <h2>
+  </div>
 
   </section><!-- End Hero -->
 
@@ -160,7 +132,3 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-

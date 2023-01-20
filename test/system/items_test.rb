@@ -16,7 +16,8 @@ class ItemsTest < ApplicationSystemTestCase
 
     fill_in "Medicamento", with: @item.medicamento_id
     fill_in "Qtd", with: @item.qtd
-    fill_in "Total", with: @item.total
+    fill_in "S total", with: @item.s_total
+    fill_in "Unit", with: @item.unit
     click_on "Create Item"
 
     assert_text "Item was successfully created"
@@ -29,7 +30,8 @@ class ItemsTest < ApplicationSystemTestCase
 
     fill_in "Medicamento", with: @item.medicamento_id
     fill_in "Qtd", with: @item.qtd
-    fill_in "Total", with: @item.total
+    fill_in "S total", with: @item.s_total
+    fill_in "Unit", with: @item.unit
     click_on "Update Item"
 
     assert_text "Item was successfully updated"

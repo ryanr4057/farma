@@ -5,10 +5,26 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @medicamentos = Medicamento.all
+
   end
+
+  def unit
+    @medicamentos = Medicamento.all
+    if persisted?
+      self[:unit]
+    else
+      medicamento.preco
+    end
+  end
+
+  def s_total
+    unit*qtd
+  end
+
 
   # GET /items/1 or /items/1.json
   def show
+    @medicamentos = Medicamento.all
   end
 
   # GET /items/new
@@ -19,7 +35,10 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @medicamentos = Medicamento.all
   end
+
+
 
   # POST /items or /items.json
   def create
@@ -28,7 +47,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
+        format.html { redirect_to item_url("/vendas"), notice: "Item was successfully created." }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,6 +58,7 @@ class ItemsController < ApplicationController
 
   # PATCH/PUT /items/1 or /items/1.json
   def update
+    @medicamentos = Medicamento.all
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to item_url(@item), notice: "Item was successfully updated." }
@@ -61,6 +81,14 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_unit
+    self[:unit] = unit
+  end
+
+  def set_s_total
+    self[:s_total] = s_total * qtd
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
@@ -68,6 +96,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:qtd, :total, :medicamento_id)
+      params.require(:item).permit(:medicamento_id, :qtd)
     end
 end

@@ -1,0 +1,19 @@
+<div id="<%= dom_id venda %>">
+  <p>
+    <strong>Atendente:</strong>
+    <%atendente = venda.atendente_id.to_s %>
+    <%= @atendentes.find(atendente).nome %>
+  </p>
+
+  <p>
+    <strong>Cliente:</strong>
+    <% cliente = venda.cliente_id.to_s %>
+    <%= @clientes.find(cliente).nome %>
+  </p>
+
+  <p>
+    <strong>Total:</strong>
+    <%= venda.total %>
+  </p>
+
+</div>

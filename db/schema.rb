@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_19_022148) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_19_195708) do
   create_table "atendentes", force: :cascade do |t|
     t.string "nome"
     t.integer "usuario"
@@ -29,12 +29,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_022148) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "qtd"
-    t.float "total"
     t.integer "medicamento_id", null: false
+    t.integer "qtd"
+    t.float "unit"
+    t.float "s_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["medicamento_id"], name: "index_items_on_medicamento_id"
+  end
+
+  create_table "items_vendas", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "venda_id"
+    t.index ["item_id"], name: "index_items_vendas_on_item_id"
+    t.index ["venda_id"], name: "index_items_vendas_on_venda_id"
   end
 
   create_table "medicamentos", force: :cascade do |t|
@@ -57,5 +65,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_022148) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vendas", force: :cascade do |t|
+    t.integer "atendente_id", null: false
+    t.integer "cliente_id", null: false
+    t.float "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["atendente_id"], name: "index_vendas_on_atendente_id"
+    t.index ["cliente_id"], name: "index_vendas_on_cliente_id"
+  end
+
   add_foreign_key "items", "medicamentos"
+  add_foreign_key "vendas", "atendentes"
+  add_foreign_key "vendas", "clientes"
 end

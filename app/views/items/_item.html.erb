@@ -1,17 +1,23 @@
 <div id="<%= dom_id item %>">
   <p>
+    <strong>Medicamento:</strong>
+    <%medicamento = item.medicamento_id.to_s %>
+    <%= @medicamentos.find(medicamento).nome %>
+  </p>
+
+  <p>
     <strong>Qtd:</strong>
     <%= item.qtd %>
   </p>
 
   <p>
-    <strong>Total:</strong>
-    <%= item.total %>
+    <strong>Unit:</strong>
+    <%= item.unit %>
   </p>
 
   <p>
-    <strong>Medicamento:</strong>
-    <%= item.medicamento_id %>
+    <strong>S total:</strong>
+    <%= item.s_total %>
   </p>
 
 </div>

@@ -12,26 +12,23 @@
   <% end %>
 
   <div>
+    <%= form.label :medicamento_id, style: "display: block" %>
+    <select class= <%= form.text_field :medicamento_id %>  >
+    <option selected>medicamento</option>
+      <% @medicamentos.each do |medicamento| %>
+        <option value= <%= medicamento.id %> > <%= medicamento.nome %></option>
+      <% end %>
+    <select>
+  </div>
+
+  <div>
     <%= form.label :qtd, style: "display: block" %>
     <%= form.number_field :qtd %>
-  </div>
-
-  <div>
-    <%= form.label :total, style: "display: block" %>
-    <%= form.text_field :total %>
-  </div>
-
-  <div>
-    <%= form.label :medicamento_id, style: "display: block" %>
-    <select class= <%= form.text_field :medicamento_id %> >
-  <option selected>medicamento</option>
-  <% @medicamentos.each do |medicamento| %>
-
-    <option value= <%= medicamento.id %> > <%= medicamento.nome %></option>
-  <% end %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+
