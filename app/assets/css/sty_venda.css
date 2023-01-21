@@ -37,6 +37,18 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.select{
+  background-color: #000000;
+  color:#daa520;
+  outline: none;
+  border: #000000;
+}
+
+.option{
+  background-color: #000000;
+  color:#daa520;
+}
+
 
 .form-control{
   margin-top: -8px;
@@ -409,8 +421,8 @@ h6 {
 #hero h1 {
   margin: 0;
   margin-top: -500px;
-  margin-left: 120px;
-  font-size: 38px;
+  margin-left: 111px;
+  font-size: 58px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
@@ -421,7 +433,7 @@ h6 {
 
 #hero h2 {
   color: #daa520;
-  margin-top: -190px;
+  margin-top: -140px;
   margin-left: 2px;
   font-size: 24px;
   text-shadow: 2px 2px 4px #000000;
@@ -431,12 +443,11 @@ h6 {
 
 #hero h4 {
   color: #ffffff;
-  margin-top: -205px;
-  margin-left: 650px;
-  font-size: 16px;
+  margin-top: 280px;
+  margin-left: 0px;
+  font-size: 24px;
   text-shadow:none;
   position:fixed;
-
 }
 
 

@@ -1,10 +1,9 @@
 class Item < ApplicationRecord
-  has_and_belongs_to_many :vendas
+  belongs_to :venda, :optional => true
   belongs_to :medicamento
 
   before_save :set_unit
   before_save :set_s_total
-
 
 
   def unit
@@ -15,6 +14,7 @@ class Item < ApplicationRecord
       medicamento.preco
     end
   end
+
 
   def s_total
     unit*qtd

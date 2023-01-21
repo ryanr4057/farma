@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_19_195708) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_20_143026) do
   create_table "atendentes", force: :cascade do |t|
     t.string "nome"
     t.integer "usuario"
@@ -30,12 +30,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_195708) do
 
   create_table "items", force: :cascade do |t|
     t.integer "medicamento_id", null: false
+    t.integer "venda_id", null: false
     t.integer "qtd"
     t.float "unit"
     t.float "s_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["medicamento_id"], name: "index_items_on_medicamento_id"
+    t.index ["venda_id"], name: "index_items_on_venda_id"
   end
 
   create_table "items_vendas", force: :cascade do |t|
@@ -76,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_195708) do
   end
 
   add_foreign_key "items", "medicamentos"
+  add_foreign_key "items", "vendas"
   add_foreign_key "vendas", "atendentes"
   add_foreign_key "vendas", "clientes"
 end

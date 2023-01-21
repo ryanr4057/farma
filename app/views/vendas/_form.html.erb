@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <select class= <%= form.text_field :atendente_id %> >
+    <select class= "select" <%= form.text_field :atendente_id %> >
       <option selected>atendente</option>
       <% @atendentes.each do |atendente| %>
         <option value= <%= atendente.id %> > <%= atendente.nome %></option>
@@ -20,9 +20,11 @@
     <select>
   </div>
 
+  <br>
+
 
   <div>
-  <select class= <%= form.text_field :cliente_id %> >
+  <select class= "select" <%= form.text_field :cliente_id %> >
     <option selected> cliente </option>
     <% @clientes.each do |cliente| %>
       <option value= <%= cliente.id %> > <%= cliente.nome %></option>
@@ -30,7 +32,12 @@
   <select>
 </div>
 
+
+
+<br>
+
   <div>
-    <%= form.submit "iniciar venda" %>
+    <%= form.submit %>
   </div>
+
 <% end %>

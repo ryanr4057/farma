@@ -11,6 +11,7 @@
 @import "font-awesome";
 @import "bootstrap";
 
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -34,6 +35,32 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", sans-serif;
+}
+
+.select{
+  background-color: #000000;
+  color:#daa520;
+  outline: none;
+  border: #000000;
+}
+
+.option{
+  background-color: #000000;
+  color:#daa520;
+}
+
+
+.form-control{
+  margin-top: -8px;
+  margin-bottom: -20px;
+  font-size: 24px;
+  color: #000000;
+  box-shadow: #000000;
+  border: none;
+}
+
+.button-sair{
+  visibility: hidden;
 }
 
 #preloader {
@@ -387,11 +414,15 @@ h6 {
 
 }
 
+.table{
+  color: #ddd;
+}
+
 #hero h1 {
   margin: 0;
-  margin-top: -500px;
-  margin-left: 120px;
-  font-size: 38px;
+  margin-top: -528px;
+  margin-left: 115px;
+  font-size: 58px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
@@ -402,13 +433,155 @@ h6 {
 
 #hero h2 {
   color: #daa520;
-  margin-top: -180px;
-  margin-left: 2px;
-  font-size: 8px;
+  margin-top: -140px;
+  margin-left: 600px;
+  font-size: 24px;
   text-shadow: 2px 2px 4px #000000;
 
   position: fixed;
 }
+
+#hero h4 {
+  color: #ffffff;
+  margin-top: -205px;
+  margin-left: 650px;
+  font-size: 16px;
+  text-shadow:none;
+  position:fixed;
+
+}
+
+
+#hero h5 {
+  color: #ffffff;
+  margin-top: -180px;
+  margin-left: 122px;
+  font-size: 24px;
+  text-shadow:none;
+  position: fixed;
+}
+
+#hero c4 {
+  color: #daa520;
+  margin-top: 0px;
+  margin-left: 300px;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+#hero c5 {
+  color: #daa520;
+  margin-top: 0px;
+  margin-left: 122px;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+#hero h6 {
+  color: #daa520;
+  margin-top: 387px;
+  margin-left: 122px;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px #000000;
+
+  position: fixed;
+}
+
+#hero h8 {
+    color: #daa520;
+    margin-top: 300px;
+    margin-left: 2px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px #000000;
+
+    position: fixed;
+  }
+
+
+  #hero h9 {
+    color: #daa520;
+    margin-top: -140px;
+    margin-left: 0px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px #000000;
+
+    position: fixed;
+  }
+
+
+#hero h3 {
+    margin-top: -30px;
+    margin-left: 2px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px #000000;
+    position: fixed;
+  }
+
+  #hero med {
+    margin-top: 140px;
+    margin-left: 0px;
+    position: fixed;
+  }
+
+  #hero qtd {
+    margin-top: -211px;
+    margin-left: 200px;
+    position: fixed;
+  }
+
+  #hero btn {
+    margin-top: 177px;
+    margin-left: 100px;
+    position: fixed;
+  }
+
+  #hero atd {
+    margin-top: -290px;
+    margin-left: 0px;
+    position: fixed;
+  }
+
+  #hero cln {
+    margin-top: -290px;
+    margin-left: 300px;
+    position: fixed;
+  }
+
+  #hero btt {
+    margin-top: 172px;
+    margin-left: 300px;
+    position: fixed;
+  }
+
+
+
+  #hero p {
+    margin-top: 520px;
+    margin-left: 0px;
+    font-size: 16px;
+
+
+  }
+
+  .campo-qtd{
+    size: 10px;
+  }
+
+
+  #hero th {
+    text-align: center;
+  }
+
+  #hero tr {
+    border-bottom: 1px solid #ffd570;
+    }
+
+  #hero tr:hover {
+  background-color: rgba(255, 255, 255, 0.055);
+  }
 
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;

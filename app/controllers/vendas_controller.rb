@@ -6,6 +6,7 @@ class VendasController < ApplicationController
     @vendas = Venda.all
     @atendentes = Atendente.all
     @clientes = Cliente.all
+    @items = Item.all
   end
 
 
@@ -13,22 +14,11 @@ class VendasController < ApplicationController
   def show
     @atendentes = Atendente.all
     @clientes = Cliente.all
+    @items = Item.all
   end
 
   # GET /vendas/new
   def new
-    @medicamentos = Medicamento.all
-    @items = Item.all
-    @item = Item.new
-    @venda = Venda.new
-    @atendentes = Atendente.all
-    @clientes = Cliente.all
-  end
-
-  def finalv
-    @medicamentos = Medicamento.all
-    @items = Item.all
-    @item = Item.new
     @venda = Venda.new
     @atendentes = Atendente.all
     @clientes = Cliente.all
@@ -36,8 +26,12 @@ class VendasController < ApplicationController
 
   # GET /vendas/1/edit
   def edit
+    @medicamentos = Medicamento.all
     @atendentes = Atendente.all
     @clientes = Cliente.all
+    @items = Item.all
+    @item = Item.new
+    @vendas = Venda.all
   end
 
   # POST /vendas or /vendas.json
@@ -45,6 +39,7 @@ class VendasController < ApplicationController
     @venda = Venda.new(venda_params)
     @atendentes = Atendente.all
     @clientes = Cliente.all
+
 
     respond_to do |format|
       if @venda.save
@@ -88,6 +83,6 @@ class VendasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def venda_params
-      params.require(:venda).permit(:atendente_id, :cliente_id)
+      params.require(:venda).permit(:atendente_id, :cliente_id, :total)
     end
 end
