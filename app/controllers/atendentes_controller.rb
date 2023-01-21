@@ -67,6 +67,6 @@ class AtendentesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def atendente_params
-      params.require(:atendente).permit(:nome, :usuario, :cpf, :idade)
+      params.require(:atendente).permit(:nome, :cpf, :idade)
     end
 end

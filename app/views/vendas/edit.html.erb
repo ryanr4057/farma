@@ -16,7 +16,7 @@
   <!-- Favicons -->
 
 
-  <link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -50,17 +50,15 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="link_to" href="/">Início</a></li>
-          <li><a class="link_to" href="/vndas">Venda</a></li>
+
 
           <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
            Gerenciar
           </button>
           <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/atendentes">Atendentes</a></li>
-          <li><a class="dropdown-item" href="/medicamentos">Medicamentos</a></li>
-          <li><a class="dropdown-item" href="/clientes">Clientes</a></li>
+
+
   </ul>
 </div>
 
@@ -97,7 +95,7 @@
 
       <med><div>
         <%= form.label :medicamento_id, style: "display: block" %>
-        <select class= <%= form.text_field :medicamento_id %>  >
+        <select class= "select-a"<%= form.text_field :medicamento_id %>  >
         <option selected>  </option>
           <% @medicamentos.each do |medicamento| %>
             <option value= <%= medicamento.id %> > <%= medicamento.nome %></option>
@@ -107,7 +105,7 @@
 
       <qtd><div>
         <%= form.label :Quantidade, style: "display: block" %>
-        <%= form.number_field :qtd, min:1, class: 'campo-qtd' %>
+        <%= form.number_field :qtd, min:1 %>
       </div><qtd>
 
 
@@ -116,7 +114,7 @@
 
 
       <btn><div>
-        <%= form.submit " + " %>
+      <button class="appointment-btn-criar-a"> + <class="d-none d-md-inline">
       </div><btn>
 
     <% end %>
@@ -140,7 +138,7 @@
 
       <atd><div>
       <%= form.label :Atendente, style: "display: block" %>
-        <select class= <%= form.text_field :atendente_id %> >
+        <select class=  "select" <%= form.text_field :atendente_id %> >
           <option selected value= <%=@venda.atendente.id %> > <%=@venda.atendente.nome %> </option>
           <% @atendentes.each do |atendente| %>
             <option value= <%= atendente.id %> > <%= atendente.nome %></option>
@@ -151,7 +149,7 @@
 
       <cln><div>
       <%= form.label :Cliente, style: "display: block" %>
-      <select class= <%= form.text_field :cliente_id %> >
+      <select class= "select" <%= form.text_field :cliente_id %> >
         <option selected value= <%=@venda.cliente.id %> > <%=@venda.cliente.nome %> </option>
         <% @clientes.each do |cliente| %>
           <option value= <%= cliente.id %> > <%= cliente.nome %></option>
@@ -159,51 +157,71 @@
       <select>
     </div></cln>
 
+    <% @items = Item.where(venda_id: @venda.id) %>
+    <% @@total_v = 0 %>
+      <% @items.each do |item| %>
+        <% @@total_v = @@total_v + item.s_total %>
+        <% end %>
 
-
-
+    <%= form.hidden_field :total, value: @@total_v %>
 
       <btt><div>
-        <%= form.submit "finalizar venda" %>
+      <button class="appointment-btn-criar-aff"> Finalizar <class="d-none d-md-inline">
       </div></btt>
 
     <% end %>
 
+
+
   </div></c4>
 
 
-  <div>
+
+  <div class="tabela">
+
   <h5><table>
   <thead>
     <tr>
-      <th style="width: 250px">Nome</th>
-      <th style="width: 120px">Quantidade</th>
-      <th style="width: 130px">Sub Total</th>
-      <th>Editar</th>
+      <th style="width: 330px">Medicamento</th>
+      <th style="width: 170px">Preço</th>
+      <th style="width: 170px">Quantidade</th>
+      <th style="width: 180px">Sub Total</th>
+      <th style="width: 140px">Editar</th>
     </tr>
   </thead>
   <tbody>
-
       <% @items = Item.where(venda_id: @venda.id).page(params[:page]) %>
       <% @items.each do |item| %>
       <tr>
-      <td style="height: 50px"><%= @medicamentos.find(item.medicamento_id).nome.to_s %></td>
-      <td><%=item.qtd %></td>
+      <td style= "height: 50px" ><%= @medicamentos.find(item.medicamento_id).nome.to_s %></td>
+      <td style= "text-align: center "><%=item.unit %></td>
+      <td style= "text-align: center "><%=item.qtd %></td>
       <td style= "text-align: center "><%=item.s_total %></td>
-      <td style= "text-align: center "><%= button_to "Apagar", item, method: :delete %></td>
+      <td style= "text-align: center "><%= button_to "Apagar", item, method: :delete, class: "appointment-btn-criar-apg1" %></td>
     </tr>
     <% end %>
+
   </tbody>
-  </table>
+  </table></h5>
+
+  </div>
 
   <h4><%= paginate @items %></h4>
 
 
+  <div class="total">
 
+  <tot>TOTAL</tot>
 
+  <% @items = Item.where(venda_id: @venda.id) %>
+    <% @@total_i = 0 %>
+      <% @items.each do |item| %>
+        <% @@total_i = @@total_i + item.s_total %>
+        <% end %>
 
+  <nto>R$: <%= @@total_i %> </nto>
 
-  </div>
+  <h6><p style="color: white"><%= notice %></p><h/6>
 
   </section><!-- End Hero -->
 

@@ -53,8 +53,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to edit_venda_path("@venda"), notice: "Medicamento Adicionado." }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+
       end
     end
   end

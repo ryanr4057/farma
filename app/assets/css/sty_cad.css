@@ -439,6 +439,16 @@ h6 {
 
 }
 
+#hero h15 {
+  color: #ffffff;
+  margin-top: 10px;
+  margin-left: 680px;
+  font-size: 16px;
+  text-shadow:none;
+  position:fixed;
+
+}
+
 
 #hero h5 {
   color: #ffffff;
@@ -446,6 +456,16 @@ h6 {
   margin-left: 122px;
   font-size: 24px;
   text-shadow:none;
+  position: fixed;
+}
+
+#hero err {
+  color: #ffffff;
+  margin-top: 270px;
+  margin-left: 2px;
+  font-size: 16px;
+  text-shadow: 2px 2px 4px #000000;
+
   position: fixed;
 }
 

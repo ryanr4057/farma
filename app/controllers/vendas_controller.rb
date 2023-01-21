@@ -4,6 +4,7 @@ class VendasController < ApplicationController
   # GET /vendas or /vendas.json
   def index
     @vendas = Venda.all
+    .page(params[:page])
     @atendentes = Atendente.all
     @clientes = Cliente.all
     @items = Item.all
@@ -15,6 +16,7 @@ class VendasController < ApplicationController
     @atendentes = Atendente.all
     @clientes = Cliente.all
     @items = Item.all
+    @medicamentos = Medicamento.all
   end
 
   # GET /vendas/new
@@ -70,7 +72,7 @@ class VendasController < ApplicationController
     @venda.destroy
 
     respond_to do |format|
-      format.html { redirect_to vendas_url, notice: "Venda was successfully destroyed." }
+      format.html { redirect_to vendas_url, notice: "Venda Apagada." }
       format.json { head :no_content }
     end
   end

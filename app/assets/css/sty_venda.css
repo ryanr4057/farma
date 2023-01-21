@@ -441,6 +441,16 @@ h6 {
   position: fixed;
 }
 
+#hero err {
+  color: #ffffff;
+  margin-top: 270px;
+  margin-left: 2px;
+  font-size: 16px;
+  text-shadow: 2px 2px 4px #000000;
+
+  position: fixed;
+}
+
 #hero h4 {
   color: #ffffff;
   margin-top: 280px;
