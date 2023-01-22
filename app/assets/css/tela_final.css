@@ -41,7 +41,8 @@ h6 {
   background-color: #000000;
   color:#ffffff;
   outline: none;
-  border: #000000;
+  border: none;
+  box-shadow: none;
 }
 
 .select-a{
@@ -210,6 +211,19 @@ h6 {
     box-shadow: #000000;
     text-shadow: none;
     font-size: 14px;
+}
+
+.campo-qtd {
+  color: #daa520;
+  padding: 0px;
+  border: none;
+
+  box-shadow: none;
+  outline: none;
+  background-color: #444444;
+  width: 131px;
+  height: 34px;
+
 }
 
 
@@ -651,7 +665,7 @@ h6 {
   }
 
   #hero qtd {
-    margin-top: -236px;
+    margin-top: -230px;
     margin-left: 200px;
     position: fixed;
     box-sizing: 20px 15px;
@@ -659,8 +673,8 @@ h6 {
   }
 
   #hero btn {
-    margin-top: 176px;
-    margin-left: 110px;
+    margin-top: 170px;
+    margin-left: -35px;
     position: fixed;
   }
 
@@ -680,6 +694,13 @@ h6 {
     margin-top: 100px;
     margin-left: 1070px;
     position: fixed;
+  }
+
+  #hero csv {
+    margin-top: 370px;
+    margin-left: 780px;
+    position: fixed;
+    font-size: 26px
   }
 
   #hero bap {

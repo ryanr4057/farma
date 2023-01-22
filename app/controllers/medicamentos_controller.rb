@@ -51,11 +51,28 @@ class MedicamentosController < ApplicationController
 
   # DELETE /medicamentos/1 or /medicamentos/1.json
   def destroy
-    @medicamento.destroy
+    @items = Item.all
+    condicao = 0
 
-    respond_to do |format|
-      format.html { redirect_to medicamentos_url, notice: "Medicamento Apagado." }
-      format.json { head :no_content }
+    @items.each do |item|
+      if (item.medicamento_id == @medicamento.id)
+        condicao = 1
+      end
+    end
+
+    if (condicao == 0)
+      @medicamento.destroy
+
+      respond_to do |format|
+        format.html { redirect_to medicamentos_url, notice: "Medicamento Apagado." }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to medicamento_url(@medicamento), notice: "Medicamento não pode ser Apagado." }
+        format.json { head :no_content }
+      end
+
     end
   end
 

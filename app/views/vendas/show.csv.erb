@@ -1,0 +1,20 @@
+<% @medicamentos = Medicamento.all %>
+<% @atendentes = Atendente.all %>
+<% @clientes = Cliente.all %>
+<% @items = Item.where(venda_id: @venda.id) %>
+<% atendente = @atendentes.find(@venda.atendente_id).nome.to_s %>
+<% cliente = @clientes.find(@venda.cliente_id).nome.to_s %>
+
+<%= ["ATENDENTE: ",atendente , "CLIENTE: ", cliente].join(";") %>
+
+<%= ["MEDICAMENTO", "PRECO", "QUANTIDADE", "SUBTOTAL"].join(";") %>
+
+<% @items.each do |item| %>
+  <% medicamento = @medicamentos.find(item.medicamento_id).nome.to_s %>
+  <% preco = item.unit %>
+  <% quantidade = item.qtd %>
+  <% subtotal = item.s_total %>
+  <%= [medicamento, preco, quantidade, subtotal].join(";") %>
+<% end %>
+
+<%= ["TOTAL: ", @venda.total].join(";") %>

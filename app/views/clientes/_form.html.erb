@@ -15,17 +15,17 @@
 
   <div>
     <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome, class: "form-control" %><br>
+    <%= form.text_field :nome, class: "form-control", autocomplete:"off" %><br>
   </div>
 
   <div>
     <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf, class: "form-control", maxlength:15, onkeypress:"$(this).mask('000.000.000-AA')" %><br>
+    <%= form.text_field :cpf, class: "form-control", maxlength:15, onkeypress:"$(this).mask('000.000.000-AA')", autocomplete:"off" %><br>
   </div>
 
   <div>
     <%= form.label :idade, style: "display: block" %>
-    <%= form.text_field :idade, class: "form-control", maxlength:2, onkeypress:"$(this).mask('00')" %><br>
+    <%= form.text_field :idade, class: "form-control", maxlength:2, onkeypress:"$(this).mask('00')", autocomplete:"off" %><br>
   </div>
 
   <div>

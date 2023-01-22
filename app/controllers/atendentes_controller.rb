@@ -51,12 +51,31 @@ class AtendentesController < ApplicationController
 
   # DELETE /atendentes/1 or /atendentes/1.json
   def destroy
-    @atendente.destroy
+    @vendas = Venda.all
+    condicao = 0
 
-    respond_to do |format|
-      format.html { redirect_to atendentes_url, notice: "Atendente Apagado." }
-      format.json { head :no_content }
+    @vendas.each do |venda|
+      if (venda.atendente_id == @atendente.id)
+        condicao = 1
+      end
     end
+
+    if (condicao == 0)
+      @atendente.destroy
+
+      respond_to do |format|
+        format.html { redirect_to atendentes_url, notice: "Atendente Apagado." }
+        format.json { head :no_content }
+      end
+
+      else
+        respond_to do |format|
+          format.html { redirect_to atendente_url(@atendente), notice: "Atendente não pode ser Apagado." }
+          format.json { head :no_content }
+      end
+
+    end
+
   end
 
   private
