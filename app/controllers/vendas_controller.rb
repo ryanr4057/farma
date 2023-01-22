@@ -8,7 +8,16 @@ class VendasController < ApplicationController
     @atendentes = Atendente.all
     @clientes = Cliente.all
     @items = Item.all
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "vendas", template: "vendas/show.html.erb"   # Excluding ".pdf" extension.
+      end
+    end
+
   end
+
 
 
   # GET /vendas/1 or /vendas/1.json
@@ -17,6 +26,13 @@ class VendasController < ApplicationController
     @clientes = Cliente.all
     @items = Item.all
     @medicamentos = Medicamento.all
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "vendas", template: "vendas/show.html.erb"   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   # GET /vendas/new

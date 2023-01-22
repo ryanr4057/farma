@@ -79,3 +79,7 @@ gem 'maskedinput-rails', '~> 1.4', '>= 1.4.1.0'
 gem 'jquery_mask_rails', '~> 0.1.0'
 gem 'jquery-rails', '~> 4.5', '>= 4.5.1'
 gem 'globalid', '~> 1.0'
+
+gem "prawn", "~> 2.4"
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
