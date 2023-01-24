@@ -169,7 +169,7 @@
    * Preloader
    */
   //let preloader = select('#preloader');
-   let preloader =document.getElementById('preloader');
+  // let preloader =document.getElementById('preloader');
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove()
