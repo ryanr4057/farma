@@ -9,15 +9,26 @@ class VendasController < ApplicationController
     @clientes = Cliente.all
     @items = Item.all
 
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "vendas", template: "vendas/show.html.erb"   # Excluding ".pdf" extension.
-      end
-    end
-
   end
 
+  def generate
+    @vendas = Venda.all
+    pdf = Prawn::Document.new
+
+    pdf.text "BodyFarma - Relatório de vendas"
+    pdf.move_down 25
+
+    @vendas.each do |venda|
+      pdf.text "-----------Venda #{venda.id.to_s}----------------"
+      pdf.move_down 5
+      pdf.text "Atendente: #{venda.cliente.nome}"
+      pdf.text "Cliente: #{venda.cliente.nome}"
+      pdf.text "Total R$: #{venda.total.to_s}"
+      pdf.move_down 5
+    end
+
+    send_data pdf.render, filename: "relatorio-vendas#{Date.today}.pdf", type: "application/pdf"
+  end
 
 
   # GET /vendas/1 or /vendas/1.json
@@ -27,12 +38,7 @@ class VendasController < ApplicationController
     @items = Item.all
     @medicamentos = Medicamento.all
 
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "vendas", template: "vendas/show.html.erb"   # Excluding ".pdf" extension.
-      end
-    end
+
   end
 
   # GET /vendas/new

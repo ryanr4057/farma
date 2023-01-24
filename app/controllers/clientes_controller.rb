@@ -71,6 +71,7 @@ class ClientesController < ApplicationController
           format.html { redirect_to cliente_url(@cliente), notice: "Cliente não pode ser Apagado." }
           format.json { head :no_content }
       end
+    end
 
     end
 
@@ -86,4 +87,5 @@ class ClientesController < ApplicationController
     def cliente_params
       params.require(:cliente).permit(:nome, :cpf, :idade)
     end
+
 end

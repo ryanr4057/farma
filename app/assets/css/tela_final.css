@@ -703,6 +703,13 @@ h6 {
     font-size: 26px
   }
 
+  #hero pdf {
+    margin-top: 0px;
+    margin-left: 0px;
+    position: fixed;
+    font-size: 26px
+  }
+
   #hero bap {
     margin-top: 145px;
     margin-left: 850px;
